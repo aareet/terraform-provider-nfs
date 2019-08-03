@@ -1,0 +1,8 @@
+*.code-workspace
+.terraform
+*.tf
+*.tfstate
+terraform-provider-nfs
+*.log
+*.backup
+*.env
