@@ -13,14 +13,15 @@ You need the following information to use this provider:
 ## Example Usage in Terraform
 
 To create a DNS record of type TXT for the domain "aareet.com", you could do the following:
-<code>
+
+```go
 resource "nfs_dns_record" "new-dns-record" {
     domain = "aareet.com"
     name = "tftest"
     type = "TXT"
     data = "I created this record using Terraform! Woo!"
 }
-</code>
+```
 
 ## TODO
 * Read existing DNS records
