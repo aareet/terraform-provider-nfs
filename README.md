@@ -1,4 +1,4 @@
-## terraform-provider-nfs
+# terraform-provider-nfs
   
 A Terraform provider for [NearlyFreeSpeech.net](https://nearlyfreespeech.net)'s API. This provider is still under development and highly unstable. Please feel free to make a pull request if you would like to contribute.
 
@@ -10,7 +10,7 @@ You need the following information to use this provider:
 - NFS_API_KEY - need to be manually requested via an assistance request
 - NFS LOGIN - your username
 
-# Example Usage in Terraform
+## Example Usage in Terraform
 
 To create a DNS record of type TXT for the domain "aareet.com", you could do the following:
 <code>
@@ -20,8 +20,8 @@ resource "nfs_dns_record" "new-dns-record" {
     type = "TXT"
     data = "I created this record using Terraform! Woo!"
 }
-<code>
+</code>
 
-# TODO
+## TODO
 * Read existing DNS records
 * Remove a DNS record
