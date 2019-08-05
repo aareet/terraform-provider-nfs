@@ -60,5 +60,18 @@ func resourceNFSDNSRecordRead(d *schema.ResourceData, m interface{}) error {
 }
 
 func resourceNFSDNSRecordDelete(d *schema.ResourceData, m interface{}) error {
-	return nil
+	client := m.(*Organization).client
+	domain := d.Get("domain").(string)
+	params := map[string]string{
+		"name": d.Get("name").(string),
+		"type": d.Get("type").(string),
+		"data": d.Get("data").(string),
+	}
+	resp, err := nfs.RemoveDNSRecord(client, domain, params)
+	if err != nil {
+		return err
+	}
+	d.SetId(params["name"])
+	log.Printf("[DEBUG] ID: %s  and response: %s", d.Id(), resp)
+	return resourceNFSDNSRecordRead(d, m)
 }
