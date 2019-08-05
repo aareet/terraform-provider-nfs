@@ -24,5 +24,4 @@ resource "nfs_dns_record" "new-dns-record" {
 ```
 
 ## TODO
-* Read existing DNS records
-* Remove a DNS record
+* Read existing DNS records/verify successful creation/removal
